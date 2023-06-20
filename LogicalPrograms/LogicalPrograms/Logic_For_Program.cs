@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,28 +11,34 @@ namespace LogicalPrograms
     {
         public static void ProgramLogic()
         {
-            Console.WriteLine("This is the Program for Fibonacci Series");
 
-            int First = 0, Second = 1, Next;
+            Console.WriteLine("This program is to find the given number is the perfect number");
 
-            Console.WriteLine("Please write the number Upto what you wanted the Fibonacci Series : ");
+            Console.WriteLine("Please enter your Number");
 
-            int Number = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("The Fibonacci Series for " + Number + " numbers is : ");
-            for (int i = 0; i < Number; i++)
+            int Num = Convert.ToInt32(Console.ReadLine());
+
+            int Sum = 0;
+
+            for (int i = 1; i < Num; i++)
             {
-                if (i < 1)
+                if(Num % i == 0)
                 {
-                    Next = i;
+                    Sum += i;
+                                       
                 }
-                else
-                {
-                    Next = First + Second;
-                    First = Second;
-                    Second = Next;
-                }
-                Console.Write(Next + " ");
+                
             }
+            if (Num == Sum)
+            {
+                Console.WriteLine("The Number is Perfect Number");
+            }
+            else
+            {
+                Console.WriteLine("The number is not the perfect number");
+            }
+
         }
+        
     }
 }

@@ -11,7 +11,9 @@ namespace LogicalPrograms
         public static void Main(string[] args)
         {
             Console.WriteLine("*************Welcome to Logical Programs**************");
-            
+
+            Logic_For_Program.ProgramLogic();
+
             Console.ReadLine();
         }
     }
